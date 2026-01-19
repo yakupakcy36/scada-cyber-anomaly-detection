@@ -69,7 +69,7 @@ class ScadaCyberAnomalyDetectorBundle:
             is_anomaly = (
                 (score >= self.threshold)
                 or (mass_res > self.mass_res_threshold)
-                or (hydro_res > 0.20)
+                or (hydro_res > 0.18)
                 or (packet_rate > 70.0)
                 or (outflow > 95.0)
                 or (level < 1.0)
@@ -91,7 +91,7 @@ class ScadaCyberAnomalyDetectorBundle:
                 mitre_tag = "MITRE ICS T0815: Point & Tag Manipulation"
                 alert_lvl = "ATTACK_CONFIRMED"
                 score = max(score, 0.92)
-            elif hydro_res > 0.15:
+            elif hydro_res > 0.18:
                 attack_vec = "REPLAY_ATTACK"
                 mitre_tag = "MITRE ICS T0839: Replay / Sensor Manipulation"
                 alert_lvl = "ATTACK_CONFIRMED"
